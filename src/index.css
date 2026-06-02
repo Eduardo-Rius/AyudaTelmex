@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  
+  --color-primary-deep: #003B5C;      /* Azul profundo */
+  --color-primary-brand: #005B96;     /* Azul institucional */
+  --color-accent-tech: #00A6D6;       /* Azul claro tecnológico */
+  --color-success-trust: #00A878;     /* Verde confianza */
+  --color-warning-alert: #F6A623;     /* Naranja/Alerta suave */
+  --color-neutral-bg: #F4F7FA;        /* Gris claro de fondo */
+  --color-neutral-dark: #1F2933;      /* Texto principal */
+  --color-neutral-muted: #5B6770;     /* Texto secundario */
+}
+
+html {
+  font-size: 18px; /* Tamaño mínimo de texto base para accesibilidad de adultos mayores */
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #F4F7FA; /* fallback */
+  background-color: var(--color-neutral-bg);
+  color: var(--color-neutral-dark);
+  min-height: 100vh;
+}
+
+/* Enfoque visible personalizado para accesibilidad de teclado */
+:focus-visible {
+  outline: 4px solid var(--color-accent-tech) !important;
+  outline-offset: 2px !important;
+}
+
+/* Ocultar elementos visualmente para lectores de pantalla */
+.visually-hidden {
+  position: absolute !important;
+  clip-path: inset(50%) !important;
+  overflow: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}
+
+/* Animaciones suaves para transiciones */
+.transition-all-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.97); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 300ms ease-out forwards;
+}
+
+.animate-scale-up {
+  animation: scaleUp 300ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 300ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Modo Oscuro Ejecutivo (Sprint 3) */
+:root {
+  --color-neutral-bg: #F4F7FA;
+  --color-neutral-dark: #1F2933;
+  --color-neutral-muted: #5B6770;
+  --color-card-bg: #ffffff;
+  --color-border-gray: #e5e7eb;
+}
+
+html.dark {
+  --color-neutral-bg: #090D16; /* Azul profundo ultra oscuro */
+  --color-neutral-dark: #F3F4F6;
+  --color-neutral-muted: #9CA3AF;
+  --color-card-bg: #111827; /* Gris carbón corporativo */
+  --color-border-gray: #1F2937;
+}
+
+body {
+  background-color: var(--color-neutral-bg) !important;
+  color: var(--color-neutral-dark) !important;
+  transition: background-color 300ms ease, color 300ms ease;
+}
+
+/* Sobrescribir colores en modo oscuro de forma global para componentes */
+html.dark .bg-white,
+html.dark aside.bg-primary-deep {
+  background-color: var(--color-card-bg) !important;
+  border-color: var(--color-border-gray) !important;
+}
+
+html.dark header.bg-white\/95,
+html.dark div.bg-white,
+html.dark div.bg-gray-50,
+html.dark div.bg-neutral-bg,
+html.dark form.bg-gray-50\/50,
+html.dark select.bg-white {
+  background-color: #1F2937 !important;
+  border-color: var(--color-border-gray) !important;
+}
+
+html.dark .text-neutral-dark,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark span.text-neutral-dark,
+html.dark td.text-neutral-dark,
+html.dark label {
+  color: #F3F4F6 !important;
+}
+
+html.dark .text-neutral-muted,
+html.dark span.text-neutral-muted {
+  color: #9CA3AF !important;
+}
+
+html.dark .border-gray-200,
+html.dark .border-gray-150,
+html.dark .border-gray-250,
+html.dark .border-gray-300,
+html.dark .border-gray-350,
+html.dark tr {
+  border-color: #1F2937 !important;
+}
+
+html.dark input,
+html.dark select,
+html.dark textarea {
+  background-color: #111827 !important;
+  color: #F3F4F6 !important;
+  border-color: #374151 !important;
+}
+
+html.dark .bg-primary-deep\/5 {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+html.dark tr:hover {
+  background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+html.dark div.bg-primary-brand\/10 {
+  background-color: rgba(0, 91, 150, 0.2) !important;
+}
+
+html.dark div.bg-success-trust\/10 {
+  background-color: rgba(0, 168, 120, 0.2) !important;
+}
+
+html.dark div.bg-red-50 {
+  background-color: rgba(220, 38, 38, 0.15) !important;
+}
+
+html.dark div.bg-warning-alert\/15 {
+  background-color: rgba(246, 166, 35, 0.2) !important;
+}
+
