@@ -16,6 +16,8 @@ import AdminAportaciones from './pages/AdminAportaciones';
 import AdminTramites from './pages/AdminTramites';
 import AdminDirectores from './pages/AdminDirectores';
 import ErrorBoundary from './components/common/ErrorBoundary';
+import AsociadoSeguroVida from './pages/AsociadoSeguroVida';
+import AdminBeneficiarios from './pages/AdminBeneficiarios';
 
 // Component to restore scroll position to top on every route transition
 function ScrollToTop() {
@@ -42,6 +44,8 @@ export default function App() {
           <Route path="/asociado/recuperacion-cuotas" element={<ErrorBoundary><RecuperacionCuotas /></ErrorBoundary>} />
           <Route path="/asociado/eventos" element={<ErrorBoundary><AsociadoEventos /></ErrorBoundary>} />
           <Route path="/asociado/estado-cuenta" element={<ErrorBoundary><AsociadoEstadoCuenta /></ErrorBoundary>} />
+          <Route path="/asociado/seguro-vida" element={<ErrorBoundary><AsociadoSeguroVida /></ErrorBoundary>} />
+          <Route path="/admin/beneficiarios" element={<ErrorBoundary><AdminBeneficiarios /></ErrorBoundary>} />
           <Route path="/asociado/documentos" element={<ErrorBoundary><AsociadoDocumentos /></ErrorBoundary>} />
           <Route path="/asociado/perfil" element={<ErrorBoundary><AsociadoPerfil /></ErrorBoundary>} />
           <Route path="/asociado/nuevo-tramite/:tipo" element={<ErrorBoundary><AsociadoNuevoTramite /></ErrorBoundary>} />

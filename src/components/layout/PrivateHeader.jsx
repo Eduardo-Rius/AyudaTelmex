@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { LogOut, User, ShieldCheck, Calendar, FileText, LayoutDashboard, FolderOpen } from 'lucide-react';
+import { ShieldCheck, LayoutDashboard, FileSpreadsheet, ClipboardList, LogOut, ArrowLeft, Briefcase, FileText, User, Calendar, FolderOpen } from 'lucide-react';
 import { LOGGED_IN_USER } from '../../data/mockData';
 
 export default function PrivateHeader() {
@@ -92,6 +92,17 @@ export default function PrivateHeader() {
               <FolderOpen className="h-5 w-5 text-accent-tech" />
               <span>Documentos</span>
             </Link>
+                <Link
+                  to="/asociado/seguro-vida"
+                  className={`inline-flex items-center gap-2 text-white font-semibold text-lg px-4 py-3 rounded-xl transition-all shrink-0 ${
+                    isActive('/asociado/seguro-vida')
+                      ? 'bg-primary-deep shadow-inner'
+                      : 'hover:bg-primary-deep/50'
+                  }`}
+                >
+                  <FileText className="h-5 w-5 text-accent-tech" />
+                  <span>Seguro de Vida</span>
+                </Link>
 
             <Link
               to="/asociado/perfil"

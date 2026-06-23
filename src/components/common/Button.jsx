@@ -1,7 +1,13 @@
 import React from 'react';
 
-export default function Button({ children, type = 'button', variant = 'primary', className = '', ...props }) {
-  const baseStyle = "inline-flex items-center justify-center font-bold rounded-2xl transition-all-smooth focus-visible:outline-none disabled:opacity-50 disabled:cursor-not-allowed text-lg px-6 py-4.5 min-h-[54px]";
+export default function Button({
+  children,
+  variant = 'primary',
+  className = '',
+  type = 'button',
+  ...props
+}) {
+  const base = "inline-flex items-center justify-center font-bold rounded-2xl transition-all-smooth focus-visible:outline-none disabled:opacity-50 disabled:cursor-not-allowed text-lg px-6 py-4.5 min-h-[54px]";
   
   const variants = {
     primary: "bg-primary-brand hover:bg-primary-deep text-white shadow-md hover:shadow-lg active:scale-98",
@@ -15,7 +21,7 @@ export default function Button({ children, type = 'button', variant = 'primary',
   return (
     <button
       type={type}
-      className={`${baseStyle} ${variants[variant]} ${className}`}
+      className={`${base} ${variants[variant] || variants.primary} ${className}`}
       {...props}
     >
       {children}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { ShieldCheck, LayoutDashboard, FileSpreadsheet, ClipboardList, LogOut, ArrowLeft, Briefcase } from 'lucide-react';
+import { ShieldCheck, LayoutDashboard, FileSpreadsheet, ClipboardList, LogOut, ArrowLeft, Briefcase, FileText } from 'lucide-react';
 
 export default function AdminSidebar() {
   const navigate = useNavigate();
@@ -89,6 +89,17 @@ export default function AdminSidebar() {
           <Briefcase className="h-5 w-5 text-accent-tech" />
           <span>Dashboard Directores</span>
         </Link>
+          <Link
+            to="/admin/beneficiarios"
+            className={`flex items-center gap-3 font-semibold text-lg px-4 py-3.5 rounded-xl transition-all ${
+              isActive('/admin/beneficiarios')
+                ? 'bg-primary-brand text-white shadow-md'
+                : 'text-blue-100 hover:bg-primary-brand/35 hover:text-white'
+            }`}
+          >
+            <FileText className="h-5 w-5 text-accent-tech" />
+            <span>Gestión de Beneficiarios</span>
+          </Link>
       </nav>
 
       {/* Footer / Actions */}
